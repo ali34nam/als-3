@@ -1,15 +1,6 @@
 (function () {
   document.documentElement.classList.add('js');
 
-  /* ---------- True viewport width (fixes fixed-position sizing on engines where
-     window.innerWidth over-reports vs. the actual layout viewport) ---------- */
-  function setViewportWidthVar() {
-    document.documentElement.style.setProperty('--vw-px', document.documentElement.clientWidth + 'px');
-    document.documentElement.style.setProperty('--vh-px', document.documentElement.clientHeight + 'px');
-  }
-  setViewportWidthVar();
-  window.addEventListener('resize', setViewportWidthVar);
-
   /* ---------- Year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
